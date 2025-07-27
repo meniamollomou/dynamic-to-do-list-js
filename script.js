@@ -6,36 +6,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to add a task to the list
     function addTask() {
-        const taskText = taskInput.value.trim();
-
-        if (taskText === '') {
-            alert('Please enter a task.');
-            return;
-        }
-
-        // Create a new <li> element for the task
-        const li = document.createElement('li');
+    const taskText = taskInput.value.trim();
+    if (taskText !== "") {
+        const li = document.createElement("li");
         li.textContent = taskText;
 
-        // Create a "Remove" button
-        const removeBtn = document.createElement('button');
-        removeBtn.textContent = 'Remove';
-        removeBtn.className = 'remove-btn';
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.className = "remove-btn";
 
-        // Set up the remove button to delete the task
-        removeBtn.onclick = function () {
+        removeBtn.onclick = function() {
             taskList.removeChild(li);
         };
 
-        // Append the remove button to the task item
         li.appendChild(removeBtn);
-
-        // Add the task item to the list
         taskList.appendChild(li);
 
-        // Clear the input field
-        taskInput.value = '';
+        taskInput.value = "";
     }
+}
 
     // Add task on button click
     addButton.addEventListener('click', addTask);
