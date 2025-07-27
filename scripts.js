@@ -1,4 +1,3 @@
-// Run this code after the HTML content has loaded
 document.addEventListener('DOMContentLoaded', function () {
     // Select DOM elements
     const addButton = document.getElementById('add-task-btn');
